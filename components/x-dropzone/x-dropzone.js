@@ -61,7 +61,7 @@ class XDropzone extends LitElement {
     this.handleAttrs(['drag-leave'], ['drag-over', 'drag-enter']);
   }
 
-  /** Utilities */
+  /** Utility methods */
   handleAttrs(added = [], removed = []) {
     // handle string case, handle null case
     for (const attr of added) this.setAttribute(attr, attr);
@@ -69,10 +69,12 @@ class XDropzone extends LitElement {
   }
 }
 
-customElements.define('x-dropzone', XDropzone);
-
+/** Utility functions */
 
 function stopEvent(event) {
   event.preventDefault();
   event.stopPropagation();
 }
+
+
+customElements.define('x-dropzone', XDropzone);
