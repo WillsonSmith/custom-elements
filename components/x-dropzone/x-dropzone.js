@@ -14,24 +14,20 @@ class XDropzone extends LitElement {
         }
       });
       this.dispatchEvent(dropEvent);
-
-      ['drag-over', 'drag-leave', 'drag-enter'].forEach(a => this.removeAttribute(a));
+      this.handleAttrs([], ['drag-over', 'drag-leave', 'drag-enter']);
     },
     'dragover': (event) => {
       stopEvent(event);
-      this.setAttribute('drag-over', 'drag-over');
+      this.handleAttrs(['drag-over']);
     },
     'dragenter': (event) => {
       stopEvent(event);
-      this.removeAttribute('drag-leave');
-      this.setAttribute('drag-enter', 'drag-enter');
+      this.handleAttrs(['drag-enter'], ['drag-leave']);
       // timed callback to remove?
     },
     'dragleave': (event) => {
       stopEvent(event);
-      this.removeAttribute('drag-over');
-      this.removeAttribute('drag-enter');
-      this.setAttribute('drag-leave', 'drag-leave');
+      this.handleAttrs(['drag-leave'], ['drag-over', 'drag-enter']);
     },
   }
 
@@ -58,6 +54,12 @@ class XDropzone extends LitElement {
     return html`
     <slot></slot>
     `
+  }
+
+  handleAttrs(added = [], removed = []) {
+    // handle string case, handle null case
+    for (const attr of added) this.setAttribute(attr, attr);
+    for (const attr of removed) this.removeAttribute(attr);
   }
 }
 
