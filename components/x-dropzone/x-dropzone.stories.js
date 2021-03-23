@@ -7,7 +7,23 @@ export default {
 }
 
 const Template = (args) => html`
-<x-dropzone><button>Hello</button></x-dropzone>
+  <style>
+    .DropArea {
+      border: 1px solid black;
+
+      height: 200px;
+      width: 500px;
+    }
+
+    x-dropzone[drag-over] .DropArea {
+      border: 1px dashed black;
+    }
+  </style>
+  <x-dropzone>
+    <div class="DropArea">
+      <button>Hello</button>
+    </div>
+  </x-dropzone>
 `
 
 export const Basic = Template.bind({})
