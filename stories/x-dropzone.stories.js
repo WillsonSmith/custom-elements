@@ -1,5 +1,5 @@
 import {html} from 'lit-element';
-import './x-dropzone.js';
+import '../components/x-dropzone';
 
 export default {
   title: 'x-dropzone',
