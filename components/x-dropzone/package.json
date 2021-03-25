@@ -1,5 +1,5 @@
 {
-  "name": "@willson-components/x-dropzone",
+  "name": "@willson-c/x-dropzone",
   "version": "0.0.1",
   "description": "A simple custom element for handling drag and drop events",
   "main": "x-dropzone.js",
