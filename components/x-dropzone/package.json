@@ -1,0 +1,16 @@
+{
+  "name": "@willson-components/x-dropzone",
+  "version": "0.0.1",
+  "description": "A simple custom element for handling drag and drop events",
+  "main": "x-dropzone.js",
+  "module": "x-dropzone.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  }
+}
