@@ -6,6 +6,7 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
+    "generate-package": "node ./scripts/generate-component",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
