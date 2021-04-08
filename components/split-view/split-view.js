@@ -22,6 +22,8 @@ class SplitView extends LitElement {
 
   constructor() {
     super();
+    this.mutationObserver = new MutationObserver(this.handleMutation);
+    this.mutationObserver.observe(this, {childList: true});
     this.resizeTimeout = null;
   }
 
@@ -30,21 +32,31 @@ class SplitView extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.numberOfChildren = this.childElementCount;
-    this.setCSSVariable(calculatePaneWidth(this, this.numberOfChildren));
     window.addEventListener('resize', this.handleResize);
-    
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.numberOfChildren = 0;
     window.removeEventListener('resize', this.handleResize);
+    this.mutationObserver.disconnect();
+    this.mutationObserver = null;
+  }
+
+  update(changedProperties) {
+    super.update(changedProperties);
+    if (changedProperties.has('numberOfChildren')) this.handleResize();
   }
 
   render() {
     return html`
       <slot></slot>
     `
+  }
+
+  handleMutation = (mutationList, _) => {
+    for (const mutation of mutationList) {
+      if (mutation.type === 'childList') {this.numberOfChildren = this.childElementCount};
+    }
   }
 
   handleResize = () => {
