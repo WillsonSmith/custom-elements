@@ -33,7 +33,6 @@ class SplitView extends LitElement {
   }
 
   /** lifecycle */
-
   connectedCallback() {
     super.connectedCallback();
     this.numberOfChildren = this.childElementCount;
@@ -53,7 +52,6 @@ class SplitView extends LitElement {
   }
 
   /** events */
-
   handleMutation = (mutationList, _) => {
     for (const mutation of mutationList) {
       if (mutation.type === 'childList') {this.numberOfChildren = this.childElementCount};
@@ -68,7 +66,6 @@ class SplitView extends LitElement {
   }
 
   /** utility */
-
   setCSSVariable(width) {
     this.setAttribute('style', `--pane-child-width: ${width}px; --pane-width: ${width}px;`)
   }
