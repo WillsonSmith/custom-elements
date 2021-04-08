@@ -48,6 +48,8 @@ class SplitView extends LitElement {
 
   update(changedProperties) {
     super.update(changedProperties);
+    // this needs to handle children attributes changing
+    // maybe an event
     if (changedProperties.has('numberOfChildren')) this.handleResize();
   }
 
