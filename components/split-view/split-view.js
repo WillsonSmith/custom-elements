@@ -19,7 +19,6 @@ class SplitView extends LitElement {
     }
   }
 
-
   constructor() {
     super();
     this.mutationObserver = new MutationObserver(this.handleMutation);
@@ -27,7 +26,13 @@ class SplitView extends LitElement {
     this.resizeTimeout = null;
   }
 
-  
+  render() {
+    return html`
+      <slot></slot>
+    `
+  }
+
+  /** lifecycle */
 
   connectedCallback() {
     super.connectedCallback();
@@ -47,11 +52,7 @@ class SplitView extends LitElement {
     if (changedProperties.has('numberOfChildren')) this.handleResize();
   }
 
-  render() {
-    return html`
-      <slot></slot>
-    `
-  }
+  /** events */
 
   handleMutation = (mutationList, _) => {
     for (const mutation of mutationList) {
@@ -66,6 +67,8 @@ class SplitView extends LitElement {
     });
   }
 
+  /** utility */
+
   setCSSVariable(width) {
     this.setAttribute('style', `--pane-child-width: ${width}px; --pane-width: ${width}px;`)
   }
@@ -75,7 +78,6 @@ function calculatePaneWidth(node, divisibleBy) {
   const totalWidth = node.offsetWidth;
   return totalWidth / divisibleBy;
 }
-
 
 customElements.define('split-view', SplitView);
 customElements.define('split-view-pane', SplitViewPane);
