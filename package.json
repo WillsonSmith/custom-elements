@@ -30,6 +30,6 @@
     "packages/*",
     "packages/legacy/x-dropzone",
     "packages/legacy/split-view",
-    "packages/file-drop"
+    "packages/components/file-drop"
   ]
 }
