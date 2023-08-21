@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build",
+    "start": "echo \"Error: no start specified\" && exit 1",
+    "build": "wireit",
     "generate-package": "node ./scripts/generate-component",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "./packages/components:build"
+      ]
+    }
   },
   "lint-staged": {
     "*.{js,ts}": [

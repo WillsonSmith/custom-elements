@@ -4,7 +4,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "declarationMap": true,
-    "outDir": "dist"
+    "outDir": "types"
   },
   "include": ["lib/**/*.js"],
   "exclude": ["node_modules", "dist", "**/*.test.js", "**/*.spec.js"]
