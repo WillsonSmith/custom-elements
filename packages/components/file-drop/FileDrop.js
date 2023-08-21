@@ -22,8 +22,10 @@ export class FileDrop extends HTMLElement {
   constructor() {
     super();
 
-    this.shadowRoot = this.attachShadow({ mode: 'open' });
-    this.shadowRoot.innerHTML = '<slot></slot>';
+    this.attachShadow({ mode: 'open' });
+    if (this.shadowRoot) {
+      this.shadowRoot.innerHTML = '<slot></slot>';
+    }
 
     this.dragEnterHandler = this.dragEnterHandler.bind(this);
     this.dragOverHandler = this.dragOverHandler.bind(this);

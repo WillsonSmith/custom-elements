@@ -1,0 +1,15 @@
+{
+  "name": "@willson/components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@open-wc/testing": "^3.0.0-next.5",
+    "@web/test-runner": "^0.17.0"
+  },
+  "scripts": {
+    "test": "wtr */test/**/*.test.js --node-resolve"
+  },
+  "author": "",
+  "license": "ISC"
+}
