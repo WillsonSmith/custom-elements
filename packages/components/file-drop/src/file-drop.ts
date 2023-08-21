@@ -1,6 +1,8 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
+type EventType = 'drag-enter' | 'drag-over' | 'drag-leave';
+
 @customElement('file-drop')
 export class FileDrop extends LitElement {
   @property({ type: String, attribute: 'drag-enter', reflect: true })
@@ -31,6 +33,7 @@ export class FileDrop extends LitElement {
   public dragEnterHandler(event: DragEvent) {
     event.preventDefault();
     this.dragEnter = 'drag-enter';
+    this.emitEvent('drag-enter', event.dataTransfer?.files);
   }
 
   public dragOverHandler(event: DragEvent) {
@@ -41,5 +44,18 @@ export class FileDrop extends LitElement {
   public dropHandler(event: DragEvent) {
     event.preventDefault();
     this.dragLeave = 'drag-leave';
+  }
+
+  emitEvent(type: EventType, fileList: FileList) {
+    const files = Array.from(fileList || []);
+    this.dispatchEvent(
+      new CustomEvent('file-drop', {
+        bubbles: true,
+        detail: {
+          type,
+          files,
+        },
+      }),
+    );
   }
 }
