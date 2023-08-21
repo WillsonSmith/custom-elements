@@ -1,5 +1,5 @@
 /**
- * @typedef {'drag-enter' | 'drag-over' | 'drag-leave'} DragEventName
+ * @typedef {'drag-enter' | 'drag-over' | 'drag-leave' | 'drop'} DragEventName
  */
 
 /**
@@ -77,11 +77,17 @@ export class FileDrop extends HTMLElement {
    */
   dragLeaveHandler(event) {
     event.preventDefault();
+    this.cleanupAttributes();
     this.setAttribute('drag-leave', 'drag-leave');
-    this.removeAttribute('drag-enter', 'drag-over');
     this.emitEvent('drag-leave', event.dataTransfer?.files);
   }
 
+  /**
+   * @param {DragEvent} event
+   * @returns {void}
+   * @private
+   * @memberof FileDrop
+   */
   dropHandler(event) {
     event.preventDefault();
     this.cleanupAttributes();
@@ -100,7 +106,7 @@ export class FileDrop extends HTMLElement {
 
   /**
    * @param {DragEventName} type
-   * @param {FileList} fileList
+   * @param {FileList} [fileList]
    * @returns {void}
    * @private
    * @memberof FileDrop
