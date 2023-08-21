@@ -1,5 +1,5 @@
 {
-  "name": "file-drop",
+  "name": "@willson/component-file-drop",
   "version": "1.0.0",
   "description": "A web component to handle file drag and drop",
   "main": "index.js",

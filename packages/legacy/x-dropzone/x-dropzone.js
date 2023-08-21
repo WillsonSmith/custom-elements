@@ -1,10 +1,10 @@
-import {LitElement, html} from 'lit-element';
+import { LitElement, html } from 'lit-element';
 
 class XDropzone extends LitElement {
   static get properties() {
     return {
-      eventName: {attribute: 'event-name', type: String}
-    }
+      eventName: { attribute: 'event-name', type: String },
+    };
   }
 
   constructor() {
@@ -21,18 +21,16 @@ class XDropzone extends LitElement {
   }
 
   render() {
-    return html`
-    <slot></slot>
-    `
+    return html` <slot></slot> `;
   }
 
   /** Events */
   events = {
-    'drop': this.handleDrop,
-    'dragover': this.handleDragOver,
-    'dragenter': this.handleDragEnter,
-    'dragleave': this.handleDragLeave,
-  }
+    drop: this.handleDrop,
+    dragover: this.handleDragOver,
+    dragenter: this.handleDragEnter,
+    dragleave: this.handleDragLeave,
+  };
 
   handleDrop(event) {
     stopEvent(event);
@@ -42,7 +40,7 @@ class XDropzone extends LitElement {
     const dropEvent = new CustomEvent(this.eventName || 'x-drop', {
       detail: {
         event,
-      }
+      },
     });
     this.dispatchEvent(dropEvent);
     this.handleAttrs([], ['drag-over', 'drag-leave', 'drag-enter']);
@@ -75,6 +73,5 @@ function stopEvent(event) {
   event.preventDefault();
   event.stopPropagation();
 }
-
 
 customElements.define('x-dropzone', XDropzone);
