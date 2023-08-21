@@ -1,0 +1,15 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@web/dev-server-storybook": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook:start": "web-dev-server --config web-dev-server-storybook.config.mjs"
+  },
+  "author": "",
+  "license": "ISC"
+}
