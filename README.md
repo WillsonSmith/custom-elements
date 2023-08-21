@@ -1,7 +1,9 @@
-ok but srs don't use this right now it's gonna break so much i swear you'll regret it
+# @willson/components
 
-or do use it i don't care, i'm not here to tell you what to do
+![](futurama-were-back-baby.gif)
 
-thx.
+I'm bringing this back from the dead.
 
-have a good day (:
+## What is this?
+
+This is a collection of tested web components that solve problems of varying sizes. Every component in this repo was designed to solve a problem I faced.
