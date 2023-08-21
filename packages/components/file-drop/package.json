@@ -3,14 +3,17 @@
   "name": "@willson/components-file-drop",
   "version": "1.0.0",
   "description": "A web component to handle file drag and drop",
-  "main": "file-drop.js",
+  "main": "lib/file-drop.js",
   "scripts": {
-    "test": "wtr test/**/*.test.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "lit": "^2.8.0"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
