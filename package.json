@@ -9,7 +9,14 @@
     "generate-package": "node ./scripts/generate-component",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +27,8 @@
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-lit-a11y": "^1.1.0-next.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "postcss-lit": "^1.1.0",
     "prettier": "^3.0.2",
     "stylelint": "^15.10.3",
