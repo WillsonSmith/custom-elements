@@ -36,3 +36,7 @@ import '@willson/components/file-drop/file-drop.js';
   </body>
 </html>
 ```
+
+### What is components/legacy?
+
+That's beyond our borders. You must never go there.
