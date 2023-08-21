@@ -2,10 +2,9 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./",
     "declaration": true,
     "declarationDir": "./types",
-    "baseUrl": "./src",
     "experimentalDecorators": true,
     "useDefineForClassFields": false
   }
