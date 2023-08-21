@@ -41,5 +41,8 @@
     "packages/legacy/x-dropzone",
     "packages/legacy/split-view",
     "packages/components/file-drop"
-  ]
+  ],
+  "dependencies": {
+    "@changesets/cli": "^2.26.2"
+  }
 }
