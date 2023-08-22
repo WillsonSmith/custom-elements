@@ -8,10 +8,6 @@
     "checkJs": true,
     "skipLibCheck": true,
     "strict": true,
-
-    // Lit specific stuff
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false,
     "plugins": [{ "name": "ts-lit-plugin" }]
   },
   "exclude": ["node_modules"]
