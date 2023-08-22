@@ -1,0 +1,29 @@
+{
+  "name": "@willson/components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "wtr */test/**/*.test.js --node-resolve",
+    "build": "wireit"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "./file-drop:build"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^3.0.0-next.5",
+    "@web/test-runner": "^0.17.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    "./file-drop/file-drop.js": {
+      "types": "./file-drop/types/file-drop.d.ts",
+      "default": "./file-drop/file-drop.js"
+    }
+  }
+}
