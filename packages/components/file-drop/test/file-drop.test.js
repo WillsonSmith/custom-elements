@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { expect, fixture, html, oneEvent } from '@open-wc/testing';
 
-import '../lib/file-drop.js';
+import '../file-drop.js';
 
 describe('file-drop', () => {
   describe('Events', () => {
