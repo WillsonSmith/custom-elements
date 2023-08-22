@@ -11,5 +11,8 @@
     "storybook:start": "web-dev-server --config web-dev-server-storybook.config.mjs"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@willson/components": "file:../../packages/components"
+  }
 }

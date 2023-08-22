@@ -19,5 +19,11 @@
     "@web/test-runner": "^0.17.0"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "exports": {
+    "./file-drop/file-drop.js": {
+      "types": "./file-drop/types/file-drop.d.ts",
+      "default": "./file-drop/file-drop.js"
+    }
+  }
 }
