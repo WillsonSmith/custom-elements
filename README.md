@@ -1,5 +1,7 @@
 # @willson/components
 
+wipperoni pizza
+
 ![](futurama-were-back-baby.gif)
 
 I'm bringing this back from the dead.
@@ -16,7 +18,7 @@ This is a collection of tested web components that solve problems of varying siz
 
 ```js
 // index.js
-import '@willson/components/file-drop/file-drop.js';
+import '@willson/components/file-drop.js';
 ```
 
 ```html
